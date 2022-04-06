@@ -33,6 +33,11 @@ const Header = () => (
           <a className="text">Posts</a>
         </Link>
       </li>
+      <li>
+        <Link href="/news">
+          <a className="text">News</a>
+        </Link>
+      </li>
     </ol>
     <style jsx>{`
       header {
