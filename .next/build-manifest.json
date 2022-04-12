@@ -25,20 +25,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/news": [
+    "/photos": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/news.js"
+      "static/chunks/pages/photos.js"
     ],
-    "/product/[productId]": [
+    "/photos/[photoId]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/product/[productId].js"
-    ],
-    "/product/[productId]/review/[reviewId]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/product/[productId]/review/[reviewId].js"
+      "static/chunks/pages/photos/[photoId].js"
     ]
   },
   "ampFirstPages": []

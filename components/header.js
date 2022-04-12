@@ -38,6 +38,11 @@ const Header = () => (
           <a className="text">News</a>
         </Link>
       </li>
+      <li>
+        <Link href="/photos">
+          <a className="text">Photo Gallery</a>
+        </Link>
+      </li>
     </ol>
     <style jsx>{`
       header {
