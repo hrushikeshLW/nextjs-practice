@@ -33,7 +33,7 @@ export const getStaticProps = async () => {
   const data = await response.json();
   return {
     props: {
-      photosData: data.slice(0, 10),
+      photosData: data,
     },
   };
 };
