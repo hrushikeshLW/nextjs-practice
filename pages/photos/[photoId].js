@@ -14,7 +14,7 @@ function Photo({photoData}) {
 export async function getStaticPaths() {
   const response = await fetch(`https://jsonplaceholder.typicode.com/photos`);
   const data = await response.json();
-  const paths = data.map((photo) => {
+  const paths = data?.slice(0, 10)?.map((photo) => {
     return {
       params: {photoId: `${photo?.id}`},
     };
