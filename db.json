@@ -1,4 +1,5 @@
 {
+  "dashboard": { "post": 50, "like": "2M" ,"share":"20k"},
   "news": [
     {
       "id": 1,
