@@ -7,7 +7,6 @@ const Blog = () => {
   const {id} = router.query;
   return (
     <>
-      <Header />
       <h1> post : {id}</h1>
       <ul>
         <li>

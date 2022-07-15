@@ -7,7 +7,6 @@ const Product = () => {
   const {productId} = router.query;
   return (
     <>
-      <Header />
       <div className="container">product {productId} details</div>
       <Link href={`${productId}/review/1`}>Review</Link>
     </>

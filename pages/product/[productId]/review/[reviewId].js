@@ -10,7 +10,6 @@ const Review = () => {
   };
   return (
     <>
-      <Header />
       <div className="container">
         review {reviewId} of product {productId}
       </div>

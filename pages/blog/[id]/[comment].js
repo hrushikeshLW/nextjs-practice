@@ -7,7 +7,6 @@ const NewBlog = () => {
   const {id, comment} = router.query;
   return (
     <div>
-      <Header />
       <h1>post :{id}</h1>
       <h3>comment :{comment}</h3>
     </div>

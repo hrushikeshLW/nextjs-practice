@@ -4,7 +4,6 @@ import Header from "../../components/header";
 const Product = () => {
   return (
     <div className="container">
-      <Header />
       <ul>
         <li>
           <Link href="/product/1">product 1</Link>

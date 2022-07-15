@@ -6,7 +6,6 @@ import Header from "../components/header";
 export default function Home() {
   return (
     <div>
-      <Header />
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
