@@ -1,7 +1,7 @@
 import Link from "next/link";
-import HeadComp from "../components/head";
-import Header from "../components/header";
-import Styles from "../styles/About.module.css";
+import HeadComp from "components/head";
+import Header from "components/header";
+import Styles from "styles/About.module.css";
 const About = () => {
   return (
     <>
