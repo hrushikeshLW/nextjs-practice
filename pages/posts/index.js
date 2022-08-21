@@ -1,7 +1,7 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
-const PostList = ({posts}) => {
+const PostList = ({ posts }) => {
   return (
     <div>
       <h1>User List</h1>

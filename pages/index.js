@@ -1,24 +1,24 @@
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import Header from "../components/header";
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
+import Header from '../components/header';
 
 export default function Home() {
   return (
     <div>
       <Head>
         <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <h1 className="title">
-          Learn <a href="https://nextjs.org">Next.js!</a>
+        <h1 className='title'>
+          Learn <a href='https://nextjs.org'>Next.js!</a>
         </h1>
         <Image
-          src="/images/avatar.png"
-          alt="new logo"
-          height="200"
-          width="200"
+          src='/images/avatar.png'
+          alt='new logo'
+          height='200'
+          width='200'
         />
       </main>
 
