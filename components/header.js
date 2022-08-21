@@ -1,7 +1,10 @@
 import Link from 'next/link';
-import { signIn, signOut } from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
+import Image from 'next/image';
 
 const Header = () => {
+  const { data, status } = useSession();
+  console.log(data, status);
   return (
     <header className='header-text'>
       <div>
@@ -46,33 +49,47 @@ const Header = () => {
               <a className='text'>Photo Gallery</a>
             </Link>
           </li>
-          <li>
-            <Link href='/api/auth/signin'>
-              <a
-                className='text'
-                onClick={(e) => {
-                  e.preventDefault();
-                  signIn();
-                }}
-              >
-                Sign In
-              </a>
-            </Link>
-          </li>
+          {!data && (
+            <li>
+              <Link href='/api/auth/signin'>
+                <a
+                  className='text'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    signIn();
+                  }}
+                >
+                  Sign In
+                </a>
+              </Link>
+            </li>
+          )}
 
-          <li>
-            <Link href='/api/auth/signout'>
-              <a
-                className='text'
-                onClick={(e) => {
-                  e.preventDefault();
-                  signOut();
-                }}
-              >
-                Sign Out
-              </a>
-            </Link>
-          </li>
+          {data && (
+            <>
+              <li>
+                <Link href='/api/auth/signout'>
+                  <a
+                    className='text'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      signOut();
+                    }}
+                  >
+                    Sign Out
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Image
+                  src={data?.user?.image}
+                  alt='profile'
+                  height='20'
+                  width='20'
+                ></Image>
+              </li>
+            </>
+          )}
         </ol>
       </div>
 
@@ -92,6 +109,7 @@ const Header = () => {
         li {
           margin: 10px;
         }
+
         .text {
           color: white;
         }
