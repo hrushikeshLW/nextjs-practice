@@ -1,59 +1,59 @@
-import Link from 'next/link';
-import { signIn, signOut, useSession } from 'next-auth/react';
-import Image from 'next/image';
+import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 
 const Header = () => {
   const { data, status } = useSession();
-  console.log(data, status);
+  console.log({ data });
   return (
-    <header className='header-text'>
+    <header className="header-text">
       <div>
         <ol>
           <li>
-            <Link href='/'>
-              <a className='text'>Home</a>
+            <Link href="/">
+              <a className="text">Home</a>
             </Link>
           </li>
           <li>
-            <Link href='/about'>
-              <a className='text'>About</a>
+            <Link href="/about">
+              <a className="text">About</a>
             </Link>
           </li>
           <li>
-            <Link href='/blog/first'>
-              <a className='text'>First Post</a>
+            <Link href="/blog/first">
+              <a className="text">First Post</a>
             </Link>
           </li>
           <li>
-            <Link href='/blog/second'>
-              <a className='text'>Second Post</a>
+            <Link href="/blog/second">
+              <a className="text">Second Post</a>
             </Link>
           </li>
           <li>
-            <Link href='/product'>
-              <a className='text'>Product</a>
+            <Link href="/product">
+              <a className="text">Product</a>
             </Link>
           </li>
           <li>
-            <Link href='/posts'>
-              <a className='text'>Posts</a>
+            <Link href="/posts">
+              <a className="text">Posts</a>
             </Link>
           </li>
           <li>
-            <Link href='/news'>
-              <a className='text'>News</a>
+            <Link href="/news">
+              <a className="text">News</a>
             </Link>
           </li>
           <li>
-            <Link href='/photos'>
-              <a className='text'>Photo Gallery</a>
+            <Link href="/photos">
+              <a className="text">Photo Gallery</a>
             </Link>
           </li>
           {!data && (
             <li>
-              <Link href='/api/auth/signin'>
+              <Link href="/api/auth/signin">
                 <a
-                  className='text'
+                  className="text"
                   onClick={(e) => {
                     e.preventDefault();
                     signIn();
@@ -68,9 +68,9 @@ const Header = () => {
           {data && (
             <>
               <li>
-                <Link href='/api/auth/signout'>
+                <Link href="/api/auth/signout">
                   <a
-                    className='text'
+                    className="text"
                     onClick={(e) => {
                       e.preventDefault();
                       signOut();
@@ -82,10 +82,11 @@ const Header = () => {
               </li>
               <li>
                 <Image
+                  className="profile-image"
                   src={data?.user?.image}
-                  alt='profile'
-                  height='20'
-                  width='20'
+                  alt="profile"
+                  height="20"
+                  width="20"
                 ></Image>
               </li>
             </>
@@ -110,6 +111,9 @@ const Header = () => {
           margin: 10px;
         }
 
+        .profile-image {
+          border-radius: 50%;
+        }
         .text {
           color: white;
         }

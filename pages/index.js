@@ -2,23 +2,26 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '../components/header';
+import { useSession } from "next-auth/react";
 
 export default function Home() {
+  const { data } = useSession();
   return (
     <div>
       <Head>
         <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className='title'>
-          Learn <a href='https://nextjs.org'>Next.js!</a>
+        <h1 className="title">welcome {data?.user?.name}</h1>
+        <h1 className="title">
+          Learn <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <Image
-          src='/images/avatar.png'
-          alt='new logo'
-          height='200'
-          width='200'
+          src="/images/avatar.png"
+          alt="new logo"
+          height="200"
+          width="200"
         />
       </main>
 
