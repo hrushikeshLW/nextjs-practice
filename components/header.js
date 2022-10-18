@@ -4,7 +4,6 @@ import Image from "next/image";
 
 const Header = () => {
   const { data, status } = useSession();
-  console.log({ data });
   return (
     <header className="header-text">
       <div>
